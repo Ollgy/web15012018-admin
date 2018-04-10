@@ -1,0 +1,71 @@
+extends ../common/general.pug
+
+block wrapper
+    .wrapper.wrapper--footer
+        section.section 
+                .header__background
+                    img(src="img/pages/welcome/bkg.jpg").header__background-img           
+                include ../common/header.pug
+                .header__overlay
+                    .header__overlay-left
+                    .header__overlay-right
+                    nav.nav.nav--overlay
+                        ul.nav__list
+                            li.nav__item.nav__item--overlay
+                                a(href="/works").nav__link
+                                    .title.title--white Мои работы
+                            li.nav__item.nav__item--overlay
+                                a(href="/about").nav__link 
+                                    .title.title--white Обо мне
+                            li.nav__item.nav__item--overlay
+                                a(href="/blog").nav__link 
+                                    .title.title--white Блог 
+                            li.nav__item.nav__item--overlay
+                                a(href="/").nav__link
+                                    .title.title--white Авторизация  
+                .person__desc.person__desc--bkg
+                    img.person__photo(alt="Ольга Баранова" src='img/pages/welcome/photo2.jpg')
+                    .about__title
+                        svg.about__icon.about__icon--blog
+                            use(xlink:href="img/sprite.svg#blog_header")
+                        .title.title--white Блог
+                    p.person__site.person__site--white Статьи, которые я написал
+
+        section.section.section--blog
+            .triangle
+                svg.triangle__svg(xmlns="http://www.w3.org/2000/svg", viewbox="0 0 1200 115", preserveaspectratio="none")
+                    polygon.triangle__left.triangle__left--work(points="0,0   0,115   600,115   600,105.5")
+            .triangle
+                svg.triangle__svg(xmlns="http://www.w3.org/2000/svg", viewbox="0 0 1200 115", preserveaspectratio="none")
+                    polygon.triangle__right.triangle__right--work(points="1200,0   1200,115   600,115   600,105.5")
+            .container.container--blog
+                nav.blognav
+                    .blognav__svg-wrapper
+                        svg.blognav__svg(xmlns="http://www.w3.org/2000/svg", viewbox="0 0 20 40", preserveaspectratio="none")
+                            a(href="").blognav__svg-link
+                                ellipse.blognav__svg-circle(cx="10" cy="20" rx="10" ry="20")
+                    ul.blognav__list
+                        if(articles) 
+                        li.blognav__item(style="height:0; padding:0; margin:0")                                                 
+                            each item in articles                           
+                                li.blognav__item
+                                    a(href="").blognav__link= item.title                       
+                            
+                .blogcontent
+                    ul.blogcontent__list
+                        if(articles)
+                        each item in articles
+                            li.blogcontent__item  
+                                article.blogcontent__article
+                                    .title_mid.title_mid--grey= item.title
+                                    -var date= new Date(item.date).toLocaleDateString('ru', {year: 'numeric', month: '2-digit', day: '2-digit'})
+                                    .blogcontent__date= item.date
+                                    .blogcontent__text= item.body 
+                include ../common/footer.pug           
+    script(src="assets/scripts/project.bundle.js")
+
+
+        
+   
+   
+   

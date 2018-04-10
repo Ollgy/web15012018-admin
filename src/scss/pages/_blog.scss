@@ -1,0 +1,219 @@
+.blognav{
+    flex:1;
+    //height: 100%;
+    display:flex;
+    align-items: flex-start;
+    padding-right: rem(50px);
+    padding-left: rem(10px);
+    text-align: left; 
+    position:relative; 
+
+    @include tablets{
+        display:inline-block;
+        position:fixed;
+        height: 100%;
+        width: 0;
+        left:0;
+        top:0;
+        padding: 0;
+        background-color: $main;        
+        box-shadow: 0 0 10px $dark_font;  
+        z-index:50;
+        transition:1s;
+
+        &:hover{
+            width:50%;
+            transition:1s;
+            padding: 15px;
+
+            & > .blognav__list{
+                width: 100%;
+            }
+
+            & + .blogcontent{
+                left:40%;
+                transition:1s;                
+            }
+        }
+    }
+
+    @include phones{
+        display:inline-block;
+        position:fixed;
+        height: 100%;
+        width: 0;
+        left:0;
+        top:0;
+        padding: 0;
+        background-color: $main;        
+        box-shadow: 0 0 10px $dark_font;  
+        z-index:50;
+        transition:1s;
+
+        &:hover{
+            width:70%;
+            transition:1s;
+            padding: 15px;
+
+            & > .blognav__list{
+                width: 100%;
+            }
+
+            & + .blogcontent{
+                left:60%;
+                transition:1s;                
+            }
+        }
+    }
+   
+    &__link{
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration:none;
+        color:$mid_font;
+
+        @include phones{
+            color:$white;
+        }
+    }
+
+    &__svg{
+        position:relative;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);        
+        width: 20px;
+        height: 40px;
+
+        &-link{
+            display: block;
+            width: 100%;
+            height:100%;
+            cursor:pointer;
+        }
+
+        &-wrapper{
+            display:none;
+            position: absolute;
+            right:0;
+            top:50%;
+            transform:translate(50%,-50%);
+            width: 30px;
+            height: 50px;
+            background: radial-gradient( closest-side, $dark_font, transparent ); 
+            
+            &:before{
+                position:absolute;
+                content:"";
+                top:0;
+                left:0;
+                height: 100%;
+                width: 50%;
+                background-color: $main;
+            }
+
+            @include phones{
+                display:block;
+            }  
+        }
+
+        &-circle{
+            fill:$main;
+        }
+    }
+
+    &__list{
+
+        width: 100%;
+
+        @include tablets{
+            width: 0;
+            overflow: hidden;
+        }        
+
+        @include phones{
+            width: 0;
+            overflow: hidden;
+        }        
+    }
+
+
+    &__item{
+        margin-bottom: rem(20px);
+        padding: rem(15px);
+        text-align:right;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        &--active{
+            color:$main_dark;
+            font-weight:700;            
+            border-right:rem(3px) solid $main_dark;  
+            
+            @include phones{
+                border-right:transparent;               
+            }
+        }
+
+        &--active > .blognav__link{
+            color:$main_dark;
+
+            @include phones{
+                color:$white;
+            }
+        }
+    }
+}
+
+.blogcontent{
+    flex:3;
+    flex-wrap:wrap;
+    height: 100%;
+    display:flex;
+    align-items: flex-start;
+    position:relative;
+    left:0;
+    transition:1s; 
+    text-align:left;
+    padding-left: rem(50px);
+    padding-right: rem(15px);
+
+    &__list{
+        max-width: rem(670px);
+
+        @include descktop1800{
+            max-width: rem(980px);
+        }
+
+        @include phones{
+            width:90%;
+
+        }
+    
+        @include tablets{
+            width:95%;
+        }
+    }
+
+    &__item{
+        padding-bottom: rem(70px);
+        padding-top: rem(70px);
+        border-bottom: rem(7px) solid $light_font;
+
+        &:first-child{
+            padding-top: 0;
+        }
+
+        &:last-child{
+            border: none;
+        }
+    }
+
+    &__date{
+        color:$light_font;
+        margin-bottom: rem(20px);
+    }
+}

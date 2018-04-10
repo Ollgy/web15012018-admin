@@ -1,0 +1,117 @@
+.footer{
+    width: 100%;
+    position:relative;
+    text-align:center;
+    font-weight:300;
+    align-self: flex-end;
+
+    &__nav{
+        margin-bottom: rem(25px);
+    }
+
+    &__main{
+        width: 100%;
+        background-color: $smoky;
+        padding: rem(30px);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+
+        @include tablets{
+            padding: rem(20px);
+        }
+
+        @include phones{
+            padding: rem(10px);
+        }
+
+
+
+    }
+
+    &__where{
+        width: 33.3%;
+        text-align: left;
+        color:$white;       
+    
+        @include tablets{
+            width:50%;
+        }
+
+        @include phones{
+            width:100%;
+            margin-bottom: rem(30px);
+            text-align: center;
+        }
+    }
+
+    &__info{
+        width: 33.3%;
+        padding-right: rem(20px);
+        padding-left: rem(20px);
+        border-left:rem(1px) solid $footer_font;
+        border-right:rem(1px) solid $footer_font;
+
+        @include tablets{
+            width:50%;
+            margin-bottom: rem(30px);
+            border-right:0;
+            padding-left: rem(15px);
+            padding-right: 0;
+        }
+
+        @include phones{
+            width:100%;
+            margin-bottom: rem(25px);
+            padding-bottom: rem(25px);            
+            border-right:0;
+            border-left: 0;
+            border-bottom:rem(1px) solid $footer_font;
+            text-align: center; 
+        }
+    
+    }
+
+    &__social{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        @include phones{
+            justify-content: center;
+        }
+    }
+
+    &__credo{
+        width: 33.3%;  
+        height: 100%;   
+        font-weight:300;
+        font-style: italic;
+        color:$footer_font;
+        text-align: left;
+        padding-left: rem(35px);
+    
+        @include tablets{
+            width:100%;
+            padding-left: 0;
+        }
+
+        @include phones{
+            width:100%;
+            padding-left: 0;
+            text-align: center;
+        }
+    }
+
+    &__personality{
+        background-color: $main;
+        padding: rem(10px);
+    }
+
+    &--relative{
+        margin-top: -$footer_height;
+        height: $footer_height;
+        position:relative;
+    }
+}

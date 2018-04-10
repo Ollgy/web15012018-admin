@@ -1,0 +1,102 @@
+@import "../layout/_variables.scss";
+@import "../layout/_media.scss"; 
+
+.tabs{   
+  width: 100%;    
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color:$bkg_lightgrey;
+  margin-bottom: rem(50px);   
+
+  &__container{
+      display:flex;
+      justify-content: flex-start;
+      align-items: center;       
+      width:100%;       
+      
+      @include descktop1800{
+          max-width:rem(1600px);
+      }
+  }
+
+  &__list{
+      display:flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap:wrap;
+
+      @include tablets{
+          width: 100%;
+      }
+
+      @include phones{
+          flex-direction:column;
+          width: 100%;
+      }
+  }
+
+  &__item{
+      display:inline-block;
+      border-right:2px solid $white;
+      text-transform: uppercase;
+      color:$mid_font;
+      font-weight:500;
+      background-color:$bkg_lightgrey;
+      font-size: 0;
+      transition:0.8s;
+
+      span{
+          font-size:rem(16px);
+      }
+
+      &_active{          
+          background-color:$white;
+          transition:0.8s;
+          .route-link{
+            color:$main;
+            transition:0.8s;
+          }
+
+      }
+
+      &:last-child{
+
+          @include tablets{
+              border-bottom:0;  
+          }
+
+          @include phones{                
+              border-bottom:0;  
+          }
+      }
+
+      @include tablets{
+         flex:1;
+      }
+
+      @include phones{
+          width: 100%;
+          border-bottom:2px solid $white;
+          border-right:0;
+
+      }
+  }
+}
+
+.route-link{
+    display: inline-block;
+    font-size:rem(16px);
+    padding: rem(25px) rem(60px) rem(25px) rem(60px);
+    text-decoration:none;
+    color:$mid_font;
+    transition:0.8s;
+
+    @include tablets{
+        padding: rem(25px) 0 rem(25px) 0;
+    }
+
+    @include phones{
+        padding: rem(25px) 0 rem(25px) 0;
+    }
+}

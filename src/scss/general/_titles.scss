@@ -1,0 +1,78 @@
+.title_mid{
+    font-size:rem(35px);
+    color:$white;
+}
+
+.title_mid--grey{
+    font-family: 'sansus_webissimoregular','Arial';
+    color:$mid_font;
+    margin-bottom: rem(20px);
+}
+
+.title_low{
+    font-size: rem(25px);
+    color: $light_font;
+    margin-bottom: rem(20px);
+}
+
+.title{
+    font-family: 'sansus_webissimoregular','Arial';
+    font-size:rem(63px);
+    color:$dark_font;
+    text-transform:uppercase;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index:10;
+    
+    @include phones{
+        font-size:rem(49px);
+    }
+    
+    &:after{
+        width: rem(90px);
+        height: rem(3px);
+        display:block;
+        content: "";
+        background-color:$dark_font;
+        margin-top: rem(15px);
+    }
+}
+
+.title--white{
+    color:$white;     
+    &:after{
+        background-color:$white;        
+    }   
+}
+
+.title--grey{    
+    color:$mid_font;
+    font-size:rem(35px);    
+    &:after{
+        background-color:$mid_font;
+        margin-top: rem(10px);       
+    }
+
+    @include phones{
+        font-size:rem(20px);
+    }
+}
+
+.title--light{    
+    color:$light_font;
+    font-size:rem(28px);    
+    &:after{
+        background-color:$light_font;
+        margin-top: rem(10px);
+    }
+}
+
+.title--lowwhite{    
+    font-size:rem(28px);
+    color:$white;        
+    &:after{
+        background-color:$white;
+        margin-top: rem(10px);        
+    }
+}

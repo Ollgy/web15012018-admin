@@ -1,0 +1,42 @@
+.social{  
+
+    &__list{
+        z-index:5;
+    }
+    
+    &__item{
+        display:inline-block;
+        margin-right: rem(30px);
+        
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    
+    &__icon{
+        width: rem(35px);
+        height: rem(35px);
+        fill:$light_font;
+        position: center center;
+        transition: 0.5s;
+
+        &:hover{
+            fill:$main_dark;
+            transition: 0.5s;
+        }
+
+        &--white{
+            fill:$white;
+        }
+
+        &--hoverwhite{
+
+            &:hover{
+            fill:$white;
+            transition: 0.5s;
+            }
+        }   
+        
+    }
+}

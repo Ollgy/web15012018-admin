@@ -1,0 +1,22 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": "27017",
+    "name": "api2017",
+    "user": "",
+    "password": ""
+  },
+  "mail": {
+    "subject": "Сообщение с сайта",
+    "smtp": {
+      "host": "smtp.mail.ru",
+      "port": 465,
+      "secure": true,
+      "auth": {
+        "user": "bo_40388@mail.ru",
+        "pass": "o90zamyatin"
+      }
+    }
+  },
+  "server" : "http://localhost:3000"
+}

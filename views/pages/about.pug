@@ -1,0 +1,99 @@
+extends ../common/general.pug
+    
+block wrapper 
+    .wrapper
+        section.section
+            include ../common/section_header.pug
+        section.section.section--about
+            .section__left.section__left--about
+                .triangle
+                    svg.triangle__svg(xmlns="http://www.w3.org/2000/svg", viewbox="0 0 1200 115", preserveaspectratio="none")
+                        polygon.triangle__left(points="0,0   0,115   600,115   600,105.5")
+                .container.container--column.container--about
+                    .about__left
+                        .about__title
+                            svg.about__icon
+                                use(xlink:href="img/sprite.svg#about_header")
+                            .title Обо мне
+                        .about__info
+                            img.about__photo(src="img/pages/about/photo1.jpg" alt="Фото1") 
+                            .about__desc
+                                .about__title
+                                    .title.title--light Кто я
+                                .about__desc-txt
+                                    p  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, doloremque accusantium,
+                                        explicabo dignissimos provident ab minus natus voluptas aut at numquam odio consequuntur
+                                        quibusdam magni sed veniam exercitationem aliquid voluptatem?Sequi architecto culpa
+                                        omnis aut voluptas explicabo quia, accusamus ut temporibus animi neque assumenda
+                                        tenetur atque nobis quam quaerat aperiam officia! Quidem, exercitationem eligendi!
+                                        Magnam consequatur deleniti deserunt reiciendis hic
+                                    p  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, doloremque accusantium,
+                                        explicabo dignissimos provident ab minus natus voluptas aut at numquam odio consequuntur
+                                        quibusdam magni sed veniam exercitationem aliquid voluptatem?Sequi architecto culpa
+                                        omnis aut voluptas explicabo quia, accusamus ut temporibus animi neque assumenda
+                                        tenetur atque nobis quam quaerat aperiam officia! Quidem, exercitationem eligendi!
+                                        Magnam consequatur deleniti deserunt reiciendis hic
+                                    p  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, doloremque accusantium,
+                                        explicabo dignissimos provident ab minus natus voluptas aut at numquam odio consequuntur
+                                        quibusdam magni sed veniam exercitationem aliquid voluptatem?Sequi architecto culpa
+                                        omnis aut voluptas explicabo quia, accusamus ut temporibus animi neque assumenda
+                                        tenetur atque nobis quam quaerat aperiam officia! Quidem, exercitationem eligendi!
+                                        Magnam consequatur deleniti deserunt reiciendis hic   
+            .section__right.section__right--about
+                .triangle
+                    svg.triangle__svg(xmlns="http://www.w3.org/2000/svg", viewbox="0 0 1200 115", preserveaspectratio="none")
+                        polygon.triangle__right(points="1200,0   1200,115   600,115   600,105.5")
+                .container.container--column.container--about
+                    .about__right
+                        .about__title
+                            .title.title--grey Чем я могу быть #[br] вам полезен
+                        .about__right-text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit blanditiis recusandae veniam sunt, deserunt qui ad, consequatur
+                                            dignissimos ducimus animi nihil eveniet nisi excepturi autem unde amet accusantium vel iusto.Reiciendis
+                                            consequuntur eos dolorum. Itaque ipsam voluptas rem ad officiis, consectetur aut sequi sunt sint,
+                                            quas in nobis? Labore sed at modi facilis deserunt dolore perferendis blanditiis, illum ullam
+                                            minima
+                        .skills
+                            .skills__block
+                                .title_low Frontend
+                                ul.skills__list
+                                    if(skills)
+                                        each item in skills
+                                            if(item.type==1)
+                                                li.skills__item
+                                                    .skills__name= item.name
+                                                    svg.skills__ring
+                                                        circle.skills__circle(r="45", cx="50%", cy="50%")
+                                                        circle.skills__circle.skills__circle--colored(class="circle-"+item.percents r="45", cx="50%", cy="50%", transform="rotate(-90 55 55)")
+                                   
+                            .skills__block
+                                .title_low Backend
+                                ul.skills__list
+                                    if(skills)
+                                        each item in skills
+                                            if(item.type==2)
+                                                li.skills__item
+                                                    .skills__name= item.name
+                                                    svg.skills__ring
+                                                        circle.skills__circle(r="45", cx="50%", cy="50%")
+                                                        circle.skills__circle.skills__circle--colored(class="circle-"+item.percents r="45", cx="50%", cy="50%", transform="rotate(-90 55 55)")
+                            .skills__block
+                                .title_low Workflow
+                                ul.skills__list
+                                    if(skills)
+                                        each item in skills
+                                            if(item.type==3)
+                                                li.skills__item
+                                                    .skills__name= item.name
+                                                    svg.skills__ring
+                                                        circle.skills__circle(r="45", cx="50%", cy="50%")
+                                                        circle.skills__circle.skills__circle--colored(class="circle-"+item.percents r="45", cx="50%", cy="50%", transform="rotate(-90 55 55)")
+    
+        .section.section--map
+                .container.container--vh.container--column
+                    .map(id="map") 
+                    include ../common/contacts.pug                                   
+                include ../common/footer.pug
+    script(src="assets/scripts/project.bundle.js")
+                                      
+                
+                     

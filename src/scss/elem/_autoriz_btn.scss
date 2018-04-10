@@ -1,0 +1,33 @@
+.autorization{   
+   
+    &__link{
+        display: flex;
+        align-items: center;
+        padding: rem(10px) rem(20px) rem(10px) rem(20px);
+        border-radius:rem(22.5px);
+        border: rem(1px) solid white;
+        text-decoration: none;
+        color: white; 
+        font-weight:500; 
+        transition: 0.5s;       
+        
+        &--green{
+            background-color: $main;
+        }
+
+
+        &:hover{
+            border: rem(1px) solid $main;
+            background-color: $main_dark;
+            transition: 0.5s;
+        }
+    }
+
+    &__icon{
+        width: rem(20px);
+        height: rem(20px);
+        display:inline-block;
+        margin-right: rem(10px);
+        fill:white;
+    }
+}

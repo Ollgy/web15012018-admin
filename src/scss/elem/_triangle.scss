@@ -1,0 +1,43 @@
+.triangle {
+   position:absolute;
+   width: 100%;
+   height: rem(115px);
+   top:rem(-115px);
+   left:0;
+  
+   
+
+   &__svg{
+     width: 100%;
+     height: 100%;
+     display: block;
+   }
+       
+    &__left{
+      left:0;
+      display:inline-block;
+      fill: $bkg_lightmain;
+
+      &--work{
+        fill:$bkg_light;
+      }
+  }
+
+    &__right{
+      right:0;
+      fill:$bkg_light;
+      display:inline-block;
+
+      @include tablets{
+        fill: $bkg_lightmain;
+      }
+
+      @include phones{
+        fill: $bkg_lightmain;
+      }
+
+      &--work{
+        fill:$bkg_light;
+      }
+  }
+}

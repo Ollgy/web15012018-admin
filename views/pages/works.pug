@@ -1,0 +1,111 @@
+extends ../common/general.pug
+include ../common/mixins.pug
+
+block wrapper
+    .wrapper
+        section.section            
+            include ../common/section_header.pug
+        .section.section--work
+            .work__title
+                .triangle
+                    svg.triangle__svg(xmlns="http://www.w3.org/2000/svg", viewbox="0 0 1200 115", preserveaspectratio="none")
+                        polygon.triangle__left.triangle__left--work(points="0,0   0,115   600,115   600,105.5")
+                .triangle
+                    svg.triangle__svg(xmlns="http://www.w3.org/2000/svg", viewbox="0 0 1200 115", preserveaspectratio="none")
+                        polygon.triangle__right.triangle__right--work(points="1200,0   1200,115   600,115   600,105.5") 
+                svg.work__icon
+                    use(xlink:href="img/sprite.svg#works_header")
+                .title Мои работы
+            .section__content--work
+                .section__left.section__left--work
+                .section__right.section__right--work                    
+                .container.container--slider
+                    .slider__info
+                        .slider__info-list 
+                            if(images)
+                            each item, index in images
+                                .slider__info-item
+                                    +sliderInfo(item.name,item.tech)
+                            
+                    .slider__image
+                        .slider__image-list
+                            if(images)
+                            each item, index in images
+                                .slider__image-item
+                                    img.slider__image-img(src=`${item.picture}`)
+                                                                    
+                                             
+                    .slider__button 
+                        .slider__button-up
+                            a.slider__button-arrow(href="").slider__button-arrow--up
+                                svg.slider__button-svg
+                                    use(xlink:href="img/sprite.svg#arrow_down")
+                            .slider__button-list.slider__button-list--up
+                                if(images)
+                                each item, index in images
+                                    .slider__button-item
+                                        img.slider__image-img(src=`${item.picture}`)
+                                        
+                        .slider__button-down
+                            a.slider__button-arrow(href="").slider__button-arrow--down
+                                svg.slider__button-svg
+                                    use(xlink:href="img/sprite.svg#arrow_down")
+                            .slider__button-list.slider__button-list--down
+                                if(images)
+                                each item, index in images
+                                    .slider__button-item
+                                        img.slider__image-img(src=`${item.picture}`)
+                                          
+        section.section.section--review(style="background-image:url('img/pages/works/bkg.jpg')")
+            script(type="template" id="formTemplate")
+                .formmodal
+                    .formmodal__msg Сообщение
+                    .formmodal__btn Закрыть
+            .container.container--column.container--review
+                img.section--review__bkgphoto1(src="img/pages/works/list1.png" alt="литст декор")
+                img.section--review__bkgphoto2(src="img/pages/works/list2.png" alt="литст декор")
+                img.section--review__bkgphoto3(src="img/pages/works/list3.png" alt="литст декор")
+                .about__title
+                    svg.about__icon.about__icon--work
+                        use(xlink:href="img/sprite.svg#about_header")
+                    .title Что обо мне #[br] говорят
+                .review
+                    ul.review__list
+                        li.review__item
+                            img.review__photo(src="img/pages/works/review/dmitr.jpg" alt="фото отзыв")
+                            .review__desc
+                                .review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 3 месяца только самых тяжелых испытаний и бессонных ночей!
+                                    img.review__text-icon(src="img/pages/works/sign.png" alt="зпт")                                                                     
+                                .review__person
+                                    span.review__person-name Дмитрий Ковальчук
+                                    span.review__person-func -основатель LoftSchool
+                        li.review__item
+                            img.review__photo(src="img/pages/works/review/vladimir.jpg" alt="фото отзыв")
+                            .review__desc
+                                .review__text Этот код выдержит любые испытания. Только, пожалуйста, не загружается сайт на слишком старых браузерах!
+                                    img.review__text-icon(src="img/pages/works/sign.png" alt="зпт") 
+                                                                                        
+                                .review__person
+                                    span.review__person-name Владимир Сабанцев
+                                    span.review__person-func -преподаватель
+                .form#form
+                    .form__box
+                        .about__title
+                            .title.title--grey Связаться со мной
+                        form.form__connect(id="mail" action='/mail' method="post" enctype="application/x-www-form-urlencoded")
+                            .form__text
+                                label.form__block(for="")
+                                    input.form__input(type="text", placeholder="Имя", id="name", name="name")
+                                    include ../common/dropdown.pug
+                                label.form__block(for="")
+                                    input.form__input(type="text", placeholder="Email", id="email", name="email")
+                                    include ../common/dropdown.pug
+                                label.form__block(for="")
+                                    textarea.form__textarea(type="textarea", placeholder="Ваше сообщение", id="comment", name="comment")
+                            .form__buttons
+                                button.form__button.form__button--rightborder(type="submit",  id="submit") Отправить
+                                button.form__button(type="button",  id="mainbtn" onclick="location.href='/'") На главную
+                include ../common/footer.pug   
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src="assets/scripts/project.bundle.js")
+

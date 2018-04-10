@@ -1,0 +1,23 @@
+.arrowdown{
+    position: absolute;
+    bottom:0;
+    margin-bottom: rem(70px);
+    z-index:10;
+
+    &__link{
+        text-decoration:none;
+        
+    }
+
+    &__icon{
+        width: rem(30px);
+        height: rem(15px);
+        fill:$light_font;
+
+        &:hover{
+            fill:$white;
+            transition: 0.5s
+        }     
+
+    }
+}
